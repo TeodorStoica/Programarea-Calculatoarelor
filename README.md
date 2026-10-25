@@ -18,7 +18,7 @@ net=brut-impozit
 print(brut)
 print(impozit)
 print(net)
-
+--------------------------------------------------------
 k=0
 st=0
 for i in range(1, 8):
@@ -29,3 +29,28 @@ for i in range(1, 8):
     if p*c>500:
         k+=1
 print(st, k)
+----------------------------------------------------------
+s=0
+b=0
+for i in range(0, 7):
+    a=int(input())
+    s+=a
+    if a>5000 and a<8000:
+       b=b+5/100*a 
+    elif a>=8000:
+        b=b+5/100*a
+print("vanzari:", s)
+print("bonus:", b)
+print(s+b)
+_________________________________________________________
+n=0
+a=int
+s=0
+while a!=0:
+    a=int(input())
+    n+=1
+    s+=a
+m=s/n
+print("nr comenzi:", n)
+print("valoarea comenzilor este", s)
+print("valoare medie:", m)
