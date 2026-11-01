@@ -1,0 +1,32 @@
+cod=str(input())
+x=len(cod)
+l=0
+n=0
+car=0
+for c in cod:
+    if c.isalpha():
+        l+=1
+    elif c.isdigit():
+        n+=1
+    else:
+        car+=1
+if n>=2 and l>=2 and x>=6 and car==0:
+    print("codul este valid")
+else:
+    print("cod invalid")
+____________________________________________
+lista=[]
+s=0
+m=0
+nr=0
+for i in range(0, 7):
+    val=int(input())
+    lista.append(val)
+for i in range(0,7):
+    s+=lista[i]
+m=s/7
+for i in range(0,7):
+    if lista[i]>m:
+        print(lista[i])
+    else: nr+=1
+print(s,m,nr)
