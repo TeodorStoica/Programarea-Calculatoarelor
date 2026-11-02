@@ -30,3 +30,36 @@ for i in range(0,7):
         print(lista[i])
     else: nr+=1
 print(s,m,nr)
+__________________________________________
+n=int(input())
+c=[]
+s=0
+p=0
+m=0
+e=0
+def consum_total(s,x):
+    s+=x
+    return s
+def verifica_consum(p):
+    if p>25:
+        print("consum depasit")
+def consum_mediu(s,n):
+    m=s/n
+    print("consumuul mediu este=", m)
+for i in range(0, n):
+    x=int(input())
+    c.append(x)
+    s=consum_total(s, c[i])
+    p=0.3*c[i]
+    verifica_consum(p)
+    e=e+1/10*c[i]
+max=c[0]
+for i in range(1,n):
+    if c[i]>max:
+        max=c[i]
+print("consum toatl=",s)
+print("costul energiei=", p)
+consum_mediu(s,n)
+print("maximul este=", max)
+print("posibila economie=", e)
+    
