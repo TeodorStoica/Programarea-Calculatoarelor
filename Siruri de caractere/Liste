@@ -62,4 +62,29 @@ print("costul energiei=", p)
 consum_mediu(s,n)
 print("maximul este=", max)
 print("posibila economie=", e)
-    
+_____________________________________
+SETURI:
+
+clienti_ian={"ana","mihai","ioana","andrei","maria"}
+clienti_feb={"mihai","ioana","elena","maria","radu"}
+print("clientii care au cumparaturi in cel putin o luna:",clienti_feb|clienti_ian)
+print("clientii care au facut cumparaturi in ambele luni:", clienti_ian & clienti_feb)
+print("clientii care au facut cumparaturi doar in ianuarie:", clienti_ian-clienti_feb) 
+print("au cumparat doar intr-o luna:", clienti_feb - clienti_ian, clienti_ian -clienti_feb)
+_______________________________________
+Tuplu
+c=1
+produse=(
+    ("Laptop", 3500,2),
+    ("Mouse",80,20),
+    ("Monitor",900,4),
+)
+def produs_maxim(produs):
+    max=produse[0][1]*produse[0][2]
+    for c in range(len(produse)):
+        x=produse[c][1]*produse[c][2]
+    if x>max:
+        max=x
+    return max
+print(produs_maxim(produse))
+
