@@ -87,4 +87,6 @@ def produs_maxim(produs):
         max=x
     return max
 print(produs_maxim(produse))
+__________________________________________
+
 
