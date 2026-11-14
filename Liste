@@ -1,0 +1,36 @@
+studenti = ["Ana", "Mihai", "Ioana", "Radu", "Elena"] 
+discipline = ["Disciplina_1", "Disciplina_2", "Disciplina_3"]
+note = [ [9, 8, 10], [7, 4, 8], [10, 9, 9], [5, 7, 6], [8, 7, 9] ]
+s=0
+poz=0
+def media(i):
+    s=0
+    for j in range(0,3):
+        s+=note[i][j]
+    return s/3
+for i in range(0,5):
+    print("notele lui", studenti[i], "sunt:", note[i], "media este ", media(i))
+max=0
+for i in range(0,5):
+    s=media(i)
+    if s>max:
+        max=s
+        poz=i
+print(studenti[poz],"are cea mai mare medie")
+for j in range(0,3):
+    m=0
+    for i in range(0,5):
+        m=m+note[i][j]
+    m=m/5
+    print("media la", discipline[j],"este", m)
+    
+_______________________________________________________________________________________
+VECTOR DE FRECVENTA
+
+note=[9,7,10,5,8]
+f=[0]*11
+for i in range(0,5):
+    f[note[i]]+=1
+for i in range(0,11):
+    if f[i]>0:
+        print("nota",i, "apare de",f[i],"ori")
