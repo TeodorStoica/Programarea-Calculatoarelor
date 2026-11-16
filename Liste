@@ -34,3 +34,39 @@ for i in range(0,5):
 for i in range(0,11):
     if f[i]>0:
         print("nota",i, "apare de",f[i],"ori")
+_____________________________________________________
+x=0
+zile=[]
+n=int(input("nr zile"))
+for i in range(0, n):
+    x=int(input())
+    zile.append(x)
+print(zile)
+def sortare_insertie(n, zile):
+    for i in range(1, n):
+        if zile[i] > zile[i-1]:
+            x = zile[i]
+            j = 0
+            ok = False
+            poz =i
+            
+            while j > i and ok == False:
+                if zile[i] < zile[j]:
+                    ok = True 
+                    poz = j
+                j += 1
+            for j in range(i, poz, -1):
+                zile[j] = zile[j-1]
+            zile[poz] = x
+            
+    return zile
+print(sortare_insertie(n,zile))
+min=zile[0]
+max=zile[n-1]
+print(min, max)
+t=0
+for i in range(0,n):
+    t+=zile[i]
+m=t/n
+print(t, m)
+
