@@ -38,3 +38,34 @@ def elimina(lista,el):
             lista[i]=lista[i+1]
     return lista
 print(elimina(lista,el))
+_____________________________________________________
+c=[]
+n=int(input("zile:"))
+for i in range(0,n):
+    x=int(input("consum:"))
+    c.append(x)
+print(c)
+def cons_max(c):
+    max=c[0]
+    for i in range(1,n):
+        if c[i]>max:
+            max=c[i]
+    return max
+print(cons_max(c))
+def inserare(c, max):
+    i=0
+    n=len(c)
+    while i<n:
+        if c[i]==max :
+            poz=i
+            c=c+[0]
+            n=len(c)
+            for j in range(n-1,poz,-1):
+                c[j]=c[j-1]
+            c[poz+1]=0
+            i+=2
+        else:i+=1
+    return c
+max=cons_max(c)
+print(inserare(c, max))
+
