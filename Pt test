@@ -1,0 +1,40 @@
+lista=[]
+n=int(input("nr zile:"))
+for i in range(0,n):
+    x=int(input("val:"))
+    lista.append(x)
+print (lista)
+x=int(input("val noua:"))
+def inserare(lista, x):
+    poz=0
+    ok=True
+    while ok==True and poz<n:
+        if lista[poz]>x:
+            ok=False
+        else: poz+=1
+    lista=lista+[0]
+    for i in range(n,poz, -1):
+        lista[i]=lista[i-1]
+    lista[poz]=x 
+    return lista
+print(inserare(lista,x))
+prag=int(input("prag:"))
+def nr_produse(lista, prag):
+    nr=0
+    for i in range(0,n):
+        if lista[i]>prag:
+            nr+=1
+    return nr
+print (nr_produse(lista,prag))
+el=int(input("elimina:"))
+def elimina(lista,el):
+    ok=True
+    n=len(lista)
+    poz=0
+    while poz<n and lista[poz]!=el:
+        poz+=1
+    if poz<n:
+        for i in range(poz, n-1):
+            lista[i]=lista[i+1]
+    return lista
+print(elimina(lista,el))
