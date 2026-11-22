@@ -115,3 +115,27 @@ else:
         i+=1
 print(t)
 print("lista are ", len(t),"elemente")
+________________________________________________
+nume=input("numele este:")
+nr=int(input("nr produse"))
+tva=float(input("tva:"))
+print(nume, nr, tva)
+produse=[]
+for i in range(0,nr):
+    x=int(input("pret:"))
+    produse.append(x)
+print(produse)
+categorii= ("alimentar", "electronic", "vestimentar")
+print(categorii[1], len(categorii))
+produse=produse+[100]
+print(produse)
+def medie(produse):
+    m=0
+    i=0
+    while i<len(produse):
+        m=m+produse[i]
+        i+=1
+    if m==0:
+        return 0
+    else: return(m/len(produse))
+print(medie(produse))
