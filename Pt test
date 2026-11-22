@@ -68,4 +68,50 @@ def inserare(c, max):
     return c
 max=cons_max(c)
 print(inserare(c, max))
-
+____________________________________________________
+s=[]
+n=int(input("nr salarii:"))
+for i in range(0,n):
+    x=int(input("introdu salariu:"))
+    s=s+[x]
+ls=0
+ld=n-1
+ok=False
+poz=-1
+x=int(input("valoarea cautata:"))
+while ls<=ld :
+    m=(ls+ld)//2
+    if s[m]==x:
+        poz=m
+        ld=m-1
+    elif x>s[m]:
+        ls=m+1
+    else: ld=m-1
+if poz==-1:
+    print("salariul nu exista in lista")
+else: print("pozitia salariului este:",m)
+print(m,"salarii sunt mai mici decat cel cautat")
+print(n-m,"salarii sunt mai mari sau egale decat cel cautat")
+________________________________________________________________________
+magazin_A = [1200, 1800, 2500, 3200, 4000] 
+magazin_B = [1500, 2000, 2800, 3500]
+t=[]
+n=len(magazin_A)
+m=len(magazin_B)
+i=0
+j=0
+while i<n and j<m:
+    if magazin_A[i]<magazin_B[j]:
+        t=t+[magazin_A[i]]
+        i+=1
+    else:t=t+[magazin_B[j]]; j+=1
+if j<m:
+    while j<m:
+        t=t+[magazin_B[j]]
+        j+=1
+else: 
+    while i<n:
+        t=t+[magazin_A[i]]
+        i+=1
+print(t)
+print("lista are ", len(t),"elemente")
