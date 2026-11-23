@@ -125,6 +125,11 @@ for i in range(0,nr):
     x=int(input("pret:"))
     produse.append(x)
 print(produse)
+catalog={}
+for i in range(0,nr):
+    cod=input("cod:")
+    catalog[cod]=produse[i]
+print(catalog)
 categorii= ("alimentar", "electronic", "vestimentar")
 print(categorii[1], len(categorii))
 produse=produse+[100]
@@ -139,3 +144,19 @@ def medie(produse):
         return 0
     else: return(m/len(produse))
 print(medie(produse))
+def pret_final(pret,categorie, client):
+    if pret<0:
+        reuturn -1
+    if categorie="alimentar":
+        reducere=0.10
+    elif categorie="electronic":
+        reducere=0.15
+    elif categorie="vestimentar":
+        reducere=0.20
+    else:
+        return -1
+    pret=pret*reducere
+    if client==True:
+        pret=pret-pret*0.
+    return pret
+print("Pret final:", pret_final(100, "alimentar", True))
