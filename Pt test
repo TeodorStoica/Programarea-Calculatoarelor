@@ -160,3 +160,61 @@ def pret_final(pret,categorie, client):
         pret=pret-pret*0.
     return pret
 print("Pret final:", pret_final(100, "alimentar", True))
+____________________________________________________________
+nume=input("nume hotel:")
+n=int(input("nr camere:"))
+taxa=float(input("taxa:"))
+tarife=[]
+for i in range(0,n):
+    x=int(input("tarif:"))
+    tarife.append(x)
+camere_tarife={}
+for i in range(0,n):
+    cod=input("cod:")
+    camere_tarife[cod]=tarife[i]
+print (camere_tarife)
+tip=("single","double","suite")
+print(tip[2],len(tip))
+tarife.insert(0,250)
+print(tarife)
+def suma(tarife):
+    s=0
+    i=0
+    while i<len(tarife):
+        s=s+tarife[i]
+        i+=1
+    return s
+print(suma(tarife))
+def cost(tarif_noapte,nr_nopti,tip_camera):
+    if tip_camera=="double":
+        tarif_noapte=tarif_noapte+tarif_noapte*0.20
+    elif tip_camera=="suite":
+        tarif_noapte=tarif_noapte+tarif_noapte*0.50
+    elif tip_camera!="single":
+        return -1
+    if nr_nopti>=5:
+        tarif_noapte=tarif_noapte-tarif_noapte*0.10
+    if tarif_noapte<0 or nr_nopti<0:
+        return -1
+    return(tarif_noapte*nr_nopti)
+print(cost(30,3,"double"))
+def concatenare(l1,l2):
+    i=0
+    j=0
+    l3=[]
+    while i<len(l1) and j<len(l2):
+        if l1[i]<=l2[j]:
+            l3.append(l1[i])
+            i+=1
+        else:
+            l3.append(l2[j])
+            j+=1
+    if i<len(l1):
+        while i<len(l1):
+            l3.append(l1[i])
+            i+=1
+    else:
+        while j<len(l2):
+            l3.append(l2[j])
+            j+=1
+    return(l3)
