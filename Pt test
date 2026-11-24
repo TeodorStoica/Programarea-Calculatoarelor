@@ -218,3 +218,85 @@ def concatenare(l1,l2):
             l3.append(l2[j])
             j+=1
     return(l3)
+___________________________________________
+#1
+nume=input("introdu nume:")
+n=int(input("nr stud:")) 
+#2
+i=0 
+studenti=[]
+while i<n:
+    nume_stud=input("nume stud:")
+    studenti.append(nume_stud)
+    i+=1  
+print(studenti)
+#3 
+note=[]
+catalog={} 
+for i in range(0,n):
+    x=int(input("introdu nota:"))
+    note.append(x)
+print(note) 
+#4
+discipline=("matematica","informatica","economie") 
+print(discipline[0],len(discipline)) 
+#5
+for i in range(0,n):
+    catalog[nume_stud[i]]=note[i]
+print(catalog) 
+#6
+note.append(8) 
+nume_stud="Alexandru"
+studenti.append(nume_stud)
+print(note, nume_stud)
+#7
+def calculeazaMedie(note):
+    s=0
+    i=0
+    while i<len(note):
+        s=s+note[i]
+        i+=1
+    return s
+note=[7,8,9]
+print(calculeazaMedie(note))
+#8
+def clasificaNote(note): 
+    for i in range(0,len(note)):
+        if note[i]>=1 and note[i]<=4:
+            print("nepromovat")
+        elif note[i]>=5 and note[i]<=6:
+            print("suficient")
+        elif note[i]>=7 and note[i]<=8:
+            print("bine")
+        else:
+            print("foarte bine")
+#9
+note=[2,5,9] 
+print(clasificaNote(note))
+#10
+def sortare(note): 
+    schimbat=True
+    while schimbat==True:
+        schimbat=False
+        for i in range(n-2,-1,-1):
+            if note[i]<note[i-1]:
+                note[i],note[i-1]=note[i-1],note[i]
+                schimbat=True
+    return(note)
+#11
+note=[9,5,8,6,10]  
+print(sortare(note))
+#12
+def insereazaDupaValoare(v, valoare, nou): 
+    i=0
+    while i<len(v):
+        if v[i]==valoare:
+            v.append(0)
+            for j in range(len(v)-1,i+1,-1):
+                v[j]=v[j-1]
+            v[i+1]=nou
+        i+=1
+    return(v)
+#13
+v=[3,5,7,5,9]
+print(insereazaDupaValoare(v,5,4))
